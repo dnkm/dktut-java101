@@ -1,4 +1,4 @@
-package com.dktut.java101.array;
+package com.dktut.java201.array;
 
 public class ArrayUtils {
 

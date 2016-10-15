@@ -1,6 +1,6 @@
 package com.dktut.java201.sorting;
 
-import com.dktut.java101.array.ArrayUtils;
+import com.dktut.java201.array.ArrayUtils;
 
 public class MergeSort2 {
 	public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.dktut.java101.array2d;
+package com.dktut.java201.array;
 
 public class TwoD {
 	public static void main(String rags[]) {
