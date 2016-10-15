@@ -1,4 +1,4 @@
-package com.dktut.java101.oop.accessModifiers;
+package com.dktut.java201.oop.accessModifiers;
 
 public class Person {
 	private int a;
