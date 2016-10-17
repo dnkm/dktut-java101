@@ -1,6 +1,8 @@
 package com.dktut.java201.generic;
 
-public class MyLinkedList {
+import java.util.Iterator;
+
+public class MyLinkedList implements Iterable<Integer> {
 	
 	public Node first;
 	public Node last;
@@ -39,7 +41,12 @@ public class MyLinkedList {
 		list.add(30);
 		list.add(40);
 		
-		list.printAll();
+		//list.printAll();
+		
+		for(int i : list) {
+			System.out.println(i);
+		}
+				
 		
 		/*
 		 // create a linked list
@@ -73,6 +80,31 @@ public class MyLinkedList {
 		 */
 	}
 
+	@Override
+	public Iterator<Integer> iterator() {
+		return new MyLinkedListIterator(first);
+	}
+}
+
+class MyLinkedListIterator implements Iterator<Integer> {
+
+	private Node node;
+	
+	public MyLinkedListIterator(Node node) {
+		this.node = node;
+	}
+	
+	@Override
+	public boolean hasNext() {
+		return node.next != null;
+	}
+
+	@Override
+	public Integer next() {
+		node = node.next;
+		return node.data;
+	}
+	
 }
 
 class Node {
