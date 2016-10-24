@@ -1,6 +1,6 @@
 package com.dktut.java201.clash;
 
-import com.dktut.java201.clash.units.Tower;
+import com.dktut.java201.clash.units.impl.Tower;
 
 public class Game {
 	public static final int MAP_LENGTH = 10; 
@@ -33,7 +33,7 @@ public class Game {
 	}
 	
 	private void setupTower(Player p, int index) {
-		Tower t = new Tower(p, TOWER_INIT_HP);
+		Tower t = new Tower(TOWER_INIT_HP, p);
 		row[index].unit = t;
 	}
 	

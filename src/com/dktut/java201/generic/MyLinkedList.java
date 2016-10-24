@@ -9,29 +9,40 @@ public class MyLinkedList implements Iterable<Integer> {
 	public int size;
 	
 	public MyLinkedList() {
-		first = null;
-		last = null;
+		first = last = new Node(0);
 		size = 0;
 	}
 	
 	public void add(int data) {
 		Node newNode = new Node(data);
+
+		last.next = newNode;
+		last = newNode;
 		
-		if (last == null) {
-			first = last = newNode;
-		} else {
-			last.next = newNode;
-			last = newNode;
-		}
+		size++;
 	}
 	
 	public void printAll() {
-		Node node = first;
+		Node node = first.next;
 		
 		while(node != null) {
 			System.out.println(node.data);
 			node = node.next;
 		}
+	}
+
+	public int get(int index) {
+		Node node = first.next;
+		for(int i=0; i<index; i++) {
+			node = node.next;
+		}
+		
+		return node.data;
+	}
+
+	@Override
+	public Iterator<Integer> iterator() {
+		return new MyLinkedListIterator(first);
 	}
 	
 	public static void main(String[] args) {
@@ -41,11 +52,27 @@ public class MyLinkedList implements Iterable<Integer> {
 		list.add(30);
 		list.add(40);
 		
-		//list.printAll();
+		System.out.println("-----------for---------------");
+		for(int i=0; i<list.size; i++) {
+			System.out.println( list.get(i) );
+		}
 		
+		System.out.println("-----------print all---------------");
+		list.printAll();
+		
+		System.out.println("-----------using the iterator---------------");
+		Iterator<Integer> iterator = list.iterator();
+		while (iterator.hasNext()) {
+			System.out.println(iterator.next());
+		}
+		
+		System.out.println("-----------foreach---------------");
 		for(int i : list) {
 			System.out.println(i);
 		}
+		
+		System.out.println("-----------java8 foreach---------------");
+		list.forEach(System.out::println);
 				
 		
 		/*
@@ -78,11 +105,6 @@ public class MyLinkedList implements Iterable<Integer> {
 	      ll.set(2, (String) val + " Changed");
 	      System.out.println("ll after change: " + ll);
 		 */
-	}
-
-	@Override
-	public Iterator<Integer> iterator() {
-		return new MyLinkedListIterator(first);
 	}
 }
 
