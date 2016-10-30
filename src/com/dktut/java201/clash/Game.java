@@ -1,6 +1,8 @@
 package com.dktut.java201.clash;
 
-import com.dktut.java201.clash.units.Tower;
+import com.dktut.java201.clash.units.impl.Goblin;
+import com.dktut.java201.clash.units.impl.Knight;
+import com.dktut.java201.clash.units.impl.Tower;
 
 public class Game {
 	public static final int MAP_LENGTH = 10; 
@@ -29,11 +31,18 @@ public class Game {
 		setupTower(players[0], 0);
 		setupTower(players[1], MAP_LENGTH-1);
 		
+		// test deploy
+		Knight u1 = new Knight(players[0]);
+		u1.deploy(row[1]);
+		
+		Goblin u2 = new Goblin(players[1]);
+		u2.deploy(row[1]);
+		
 		display();
 	}
 	
 	private void setupTower(Player p, int index) {
-		Tower t = new Tower(p, TOWER_INIT_HP);
+		Tower t = new Tower(TOWER_INIT_HP, p);
 		row[index].unit = t;
 	}
 	
