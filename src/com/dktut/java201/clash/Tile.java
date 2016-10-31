@@ -13,4 +13,12 @@ public class Tile {
 		
 		return "";
 	}
+	
+	public void accept(Unit unit) throws Exception {
+		if (this.unit == null) {
+			this.unit = unit;
+		} else {
+			throw new Exception("Tile Occupied");
+		}
+	}
 }

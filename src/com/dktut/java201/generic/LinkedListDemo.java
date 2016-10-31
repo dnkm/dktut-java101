@@ -1,5 +1,13 @@
 package com.dktut.java201.generic;
 
-public class LinkedListDemo {
+import java.util.*;
 
+public class LinkedListDemo {
+	
+	public static void main(String[] args) {
+		// array
+		// arrayList
+		// linkedList
+		// hashMap
+	}
 }

@@ -1,5 +1,10 @@
 package com.dktut.java201.clash;
 
+<<<<<<< HEAD
+=======
+import com.dktut.java201.clash.units.impl.Goblin;
+import com.dktut.java201.clash.units.impl.Knight;
+>>>>>>> d598014bb7d75606c756caf8a2d338b7c14133fb
 import com.dktut.java201.clash.units.impl.Tower;
 
 public class Game {
@@ -28,6 +33,13 @@ public class Game {
 		
 		setupTower(players[0], 0);
 		setupTower(players[1], MAP_LENGTH-1);
+		
+		// test deploy
+		Knight u1 = new Knight(players[0]);
+		u1.deploy(row[1]);
+		
+		Goblin u2 = new Goblin(players[1]);
+		u2.deploy(row[1]);
 		
 		display();
 	}
