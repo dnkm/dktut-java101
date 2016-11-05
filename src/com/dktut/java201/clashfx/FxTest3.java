@@ -43,7 +43,7 @@ public class FxTest3 extends Application {
 	            double x = 232 + 128 * Math.cos(t);
 	            double y = 232 + 128 * Math.sin(t);
 
-	            //gc.clearRect(0, 0, 512, 512);
+	            gc.clearRect(0, 0, 512, 512);
 	            gc.drawImage( earth, x, y );
 	            gc.drawImage( sun, 196, 196 );
 	        }

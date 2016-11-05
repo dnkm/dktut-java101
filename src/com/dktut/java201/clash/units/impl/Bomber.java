@@ -7,7 +7,7 @@ public class Bomber implements Deployable {
 	@Override
 	public void deploy() {
 		// TODO Auto-generated method stub
-		
+		super.deploy(null);
 	}
 
 }

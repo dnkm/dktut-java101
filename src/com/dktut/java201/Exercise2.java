@@ -1,41 +1,27 @@
 package com.dktut.java201;
 
-import java.util.Random;
-
 public class Exercise2 {
 
-	public static void main(String args[]) {
-		int[] arr = createRandomArray(10);
-		print(arr);
+	public static void main(String[] args) {
+		for (int i = 2; i <= 100; i++) {
+			if (isPrime(i)) {
+				System.out.print(i + ",");
+			}
+		}
+	}
+
+	static boolean isPrime(int x) {
+		if ( x == 2) {
+			return true;
+		}
 		
-		reverse(arr);
-		print(arr);
-	}
-	
-	public static void reverse(int[] arr) {
-		for(int i=0; i<arr.length/2; i++) {
-			int temp = arr[i];
-			arr[i] = arr[arr.length-1-i];
-			arr[arr.length-1-i] = temp;
+		for (int i = 3; i < x; i+=2) {
+			if (x % i == 0) {
+				return false;
+			}
 		}
-	}
-	
-	public static int[] createRandomArray(int size) {
-		Random rand = new Random();
-
-		int[] arr = new int[size];
-		for (int i = 0; i < arr.length; i++) {
-			arr[i] = rand.nextInt(10);
-		}
-		return arr;
+		
+		return true;
 	}
 
-	public static void print(int[] arr) {
-		System.out.print("[");
-		for (int i = 0; i < arr.length; i++) {
-			System.out.print(arr[i]);
-			if (i < arr.length-1) { System.out.print(", "); }
-		}
-		System.out.println("]");
-	}
 }
