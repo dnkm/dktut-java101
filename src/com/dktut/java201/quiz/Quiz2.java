@@ -10,7 +10,9 @@ import java.util.TreeSet;
 
 public class Quiz2 {
 	public static void main(String[] args) {
-		int[] array = generateArrayWithMissingNumber(30);
+		//int[] array = generateArrayWithMissingNumber(30);
+		
+		int[] array = {1,5,2,8,3,4,6,7,10};
 		printArray(array);
 		
 		printMissingNumber1(array);

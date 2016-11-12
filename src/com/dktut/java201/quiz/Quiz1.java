@@ -18,40 +18,6 @@ public class Quiz1 {
 		}
 	}
 	
-	// public static int[] generateArrayWithMissingNumber(int size)
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	public static int[] generateArrayWithMissingNumber(int size) {
 		int[] array = new int[size];
 
