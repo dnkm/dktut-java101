@@ -56,7 +56,7 @@ class Game {
 		for(int i=0; i<board.length; i++) {
 			boolean cell = board[i];
 			
-			int total = getLeft(i) + getRight(i) + getTop(i) + getBottom(i);
+			int total = 1;//getLeft(i) + getRight(i) + getTop(i) + getBottom(i);
 			
 			if (total == 3) {
 				cell = true;
@@ -68,7 +68,6 @@ class Game {
 		}
 	}
 	
-	public int getLeft()
 	
 	public void draw() {
 		System.out.println("\n\n\n\n\n\n\n\n");
