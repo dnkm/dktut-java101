@@ -35,8 +35,8 @@ public class Quiz4 extends Application {
 	    	double t = 0;
 	        public void handle(long currentNanoTime)
 	        {
-	            //double t = (currentNanoTime - startNanoTime) / 1000000000.0;
-	        	t += Math.PI/30;	// Math.toRadians(10);
+	            double t = (currentNanoTime - startNanoTime) / 1000000000.0;
+	        	//t += Math.PI/30;	// Math.toRadians(10);
 	        	
 	        	
 	            c1.setCenterY(200D + 100 * Math.cos(t));

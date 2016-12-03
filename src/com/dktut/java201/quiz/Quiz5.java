@@ -4,11 +4,22 @@ package com.dktut.java201.quiz;
 public class Quiz5 {
 
 	public static void main(String[] args) {
-		CombinationGenerator.printCombinations(new int[] { 1, 2, 3, 4, 5 }, 3);
+		CombinationGenerator.printCombinations(new int[] { 1, 2, 3, 4 }, 2);
 		CombinationGenerator.printCombinations(new int[] { 1, 2, 3, 4 }, 3);
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
 
 class CombinationGenerator {
 
