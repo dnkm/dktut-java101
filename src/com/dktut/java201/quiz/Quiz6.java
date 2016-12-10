@@ -44,6 +44,13 @@ public class Quiz6 {
 		return true;
 	}
 
+	
+	
+	
+	
+	
+	
+	
 	private static String reverse(String in) {
 
 		char[] out = in.toCharArray();

@@ -10,40 +10,43 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 public class Game extends Application {
-
+	
+	public Player[] players;
+	public Group root;
+	
 	public static void main(String[] args) {
 		launch(args);
 	}
 	
 	@Override
 	public void start(Stage stage) throws Exception {
+		players = new Player[2];
+		players[0] = new Player("Player", Color.DEEPSKYBLUE, 350);
+		players[1] = new Player("Bot", Color.DEEPPINK, 30);
+		
 		stage.setTitle("Cash Royale");
-		Group root = new Group();
-		Scene scene = new Scene(root, 400, 400);
+		root = new Group();
+		Scene scene = 
+				new Scene(root, Constants.GAME_WIDTH, Constants.GAME_HEIGHT);
 		stage.setScene(scene);
 
-		Tower t1 = new Tower(10, 10, Color.AQUA);
-		Tower t2 = new Tower(10, 340, Color.HOTPINK);
-		
-		root.getChildren().add(t1.draw());
-		root.getChildren().add(t2.draw());
-		
-		Unit u1 = new Unit(50,50,1,10,t2);
-		Unit u2 = new Unit(200,200,1,10,t1);
-		
-		root.getChildren().add(u1.draw());
-		root.getChildren().add(u2.draw());
+		players[0].createTowers(root);
+		players[1].createTowers(root);
 		
 		new AnimationTimer() {
 			
 			@Override
 			public void handle(long now) {
-				u1.move();
-				u2.move();
+				//u1.move();
+				//u2.move();
 			}
 		}.start();
 		
 		stage.show();
+	}
+	
+	public void doSomething() {
+		
 	}
 
 }
