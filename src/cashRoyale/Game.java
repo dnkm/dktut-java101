@@ -1,7 +1,5 @@
 package cashRoyale;
 
-import cashRoyale.unit.impl.Tower;
-import cashRoyale.unit.impl.Unit;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.Group;
