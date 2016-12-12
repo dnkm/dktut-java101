@@ -7,42 +7,22 @@ public class Baseball {
 
 	public static void main(String[] args) {
 
-		String input = "";
-		int strike = 0;
-		int ball = 0;
-
-		int[] number = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-		int[] answer = new int[3];
-		int[] guess = new int[3];
-		
 		Scanner scan = new Scanner(System.in);
 
 		// shuffle
-		for(int i=0; i<100; i++) {
-			int a = (int) (Math.random() * number.length);
-			int b = (int) (Math.random() * number.length);
-			
-			int temp = number[a];
-			number[a] = number[b];
-			number[b] = temp;
-		}
-		
-		answer[0] = number[0];
-		answer[1] = number[1];
-		answer[2] = number[2];
-		
+		int[] answer = generateAnswer();
 		System.out.println(Arrays.toString(answer));
 		
-		while ( true ) {
-			strike = ball = 0;
-			System.out.print("Guess : ");
-			input = scan.next();
+		for(int tries = 1; ; tries++) {
+			String input = "";
+			int strike = 0;
+			int ball = 0;
+			int[] guess = new int[3];
 			
-			for (int i=0; i<3; i++) {
-				char c = input.charAt(i);
-				//guess[i] = Character.getNumericValue(c);
-				guess[i] = c - '0';
-			}
+			System.out.print("\nGuess : ");
+			guess[0] = scan.nextInt();
+			guess[1] = scan.nextInt();
+			guess[2] = scan.nextInt();
 			
 			System.out.println(Arrays.toString(guess));
 			
@@ -59,13 +39,28 @@ public class Baseball {
 			}
 			
 			if (strike == 3) {
-				System.out.println("CORRECT");
+				System.out.println("CORRECT in " + tries + " tries");
 				break;
 			}
 			
 			System.out.println("S: " + strike);
 			System.out.println("B: " + ball);
 		}
+	}
+
+	private static int[] generateAnswer() {
+		int[] number = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+		
+		for(int i=0; i<100; i++) {
+			int a = (int) (Math.random() * number.length);
+			int b = (int) (Math.random() * number.length);
+			
+			int temp = number[a];
+			number[a] = number[b];
+			number[b] = temp;
+		}
+		
+		return new int[] { number[0], number[1], number[2] };
 	}
 
 }
