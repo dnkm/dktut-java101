@@ -11,15 +11,15 @@ public class Baseball {
 
 		// shuffle
 		int[] answer = generateAnswer();
-		System.out.println(Arrays.toString(answer));
+		//System.out.println(Arrays.toString(answer));
 		
 		for(int tries = 1; ; tries++) {
 			String input = "";
 			int strike = 0;
 			int ball = 0;
-			int[] guess = new int[3];
+			int[] guess = new int[4];
 			
-			System.out.print("\nGuess : ");
+			System.out.print("Guess : ");
 			guess[0] = scan.nextInt();
 			guess[1] = scan.nextInt();
 			guess[2] = scan.nextInt();
@@ -38,7 +38,7 @@ public class Baseball {
 				}
 			}
 			
-			if (strike == 3) {
+			if (strike == 4) {
 				System.out.println("CORRECT in " + tries + " tries");
 				break;
 			}
@@ -60,7 +60,7 @@ public class Baseball {
 			number[b] = temp;
 		}
 		
-		return new int[] { number[0], number[1], number[2] };
+		return new int[] { number[0], number[1], number[2], number[3] };
 	}
 
 }

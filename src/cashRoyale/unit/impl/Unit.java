@@ -5,21 +5,18 @@ import javafx.scene.Node;
 
 public abstract class Unit {
 
-	public double x, y;
 	public double speed;
 	public Node node;
 	public Player player;
 	
-	public Unit(double x, double y, double speed, Player player) {
-		this.x = x;
-		this.y = y;
+	public Unit(double speed, Player player) {
 		this.speed = speed;
 		this.player = player;
 	}
 
 	public abstract void move();
 
-	public abstract Node draw();
+	public abstract Node draw(double x, double y);
 
 }
 
